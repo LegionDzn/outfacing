@@ -1,0 +1,236 @@
+/* ------------------------------------------------------------
+   Prefixing all selectors with `.markdown-content`
+   ------------------------------------------------------------ */
+
+/* Keep @import statements as they are (they are not selectors) */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700);
+@import url(http://fonts.googleapis.com/css?family=Arimo:700,700italic);
+
+/* Media print rules */
+@media print {
+  .markdown-content *,
+  .markdown-content *:before,
+  .markdown-content *:after {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  .markdown-content a,
+  .markdown-content a:visited {
+    text-decoration: underline;
+  }
+
+  .markdown-content a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  .markdown-content abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .markdown-content a[href^="#"]:after,
+  .markdown-content a[href^="javascript:"]:after {
+    content: "";
+  }
+
+  .markdown-content pre,
+  .markdown-content blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  .markdown-content thead {
+    display: table-header-group;
+  }
+
+  .markdown-content tr,
+  .markdown-content img {
+    page-break-inside: avoid;
+  }
+
+  .markdown-content img {
+    max-width: 100% !important;
+  }
+
+  .markdown-content p,
+  .markdown-content h2,
+  .markdown-content h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .markdown-content h2,
+  .markdown-content h3 {
+    page-break-after: avoid;
+  }
+}
+body{
+  background-color: #0a0a0a;
+  min-height: 100vh;
+}
+
+/* Code and Pre elements */
+.markdown-content pre,
+.markdown-content code {
+  font-family: Menlo, Monaco, "Courier New", monospace;
+}
+
+.markdown-content pre {
+  padding: 0.5rem;
+  line-height: 1.25;
+  overflow-x: scroll;
+}
+
+/* Links */
+.markdown-content a,
+.markdown-content a:visited {
+  color: #3498db;
+}
+
+.markdown-content a:hover,
+.markdown-content a:focus,
+.markdown-content a:active {
+  color: #2980b9;
+}
+
+/* No-decoration utility */
+.markdown-content .modest-no-decoration {
+  text-decoration: none;
+}
+
+/* html (scoped; typically won't apply unless nested) */
+.markdown-content html {
+  font-size: 12px;
+}
+
+/* Responsive font sizing for screens within .markdown-content */
+@media screen and (min-width: 32rem) and (max-width: 48rem) {
+  .markdown-content html {
+    font-size: 15px;
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  .markdown-content html {
+    font-size: 16px;
+  }
+}
+
+/* Body (scoped; typically won't apply unless nested) */
+.markdown-content body {
+  line-height: 1.85;
+}
+
+/* Paragraphs */
+.markdown-content p,
+.markdown-content .modest-p {
+  font-size: 1rem;
+  margin-bottom: 1.3rem;
+}
+
+/* Headings */
+.markdown-content h1,
+.markdown-content .modest-h1,
+.markdown-content h2,
+.markdown-content .modest-h2,
+.markdown-content h3,
+.markdown-content .modest-h3,
+.markdown-content h4,
+.markdown-content .modest-h4 {
+  margin: 1.414rem 0 0.5rem;
+  font-weight: inherit;
+  line-height: 1.42;
+}
+
+.markdown-content h1,
+.markdown-content .modest-h1 {
+  margin-top: 0;
+  font-size: 3.998rem;
+}
+
+.markdown-content h2,
+.markdown-content .modest-h2 {
+  font-size: 2.827rem;
+}
+
+.markdown-content h3,
+.markdown-content .modest-h3 {
+  font-size: 1.999rem;
+}
+
+.markdown-content h4,
+.markdown-content .modest-h4 {
+  font-size: 1.414rem;
+}
+
+.markdown-content h5,
+.markdown-content .modest-h5 {
+  font-size: 1.121rem;
+}
+
+.markdown-content h6,
+.markdown-content .modest-h6 {
+  font-size: 0.88rem;
+}
+
+.markdown-content small,
+.markdown-content .modest-small {
+  font-size: 0.707em;
+}
+
+/* Fluid images, etc. */
+.markdown-content img,
+.markdown-content canvas,
+.markdown-content iframe,
+.markdown-content video,
+.markdown-content svg,
+.markdown-content select,
+.markdown-content textarea {
+  max-width: 100%;
+}
+
+/* Override fonts / layout */
+.markdown-content html {
+  font-size: 18px;
+  max-width: 100%;
+}
+
+.markdown-content body {
+  color: #444;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 300;
+  margin: 0 auto;
+  max-width: 48rem;
+  line-height: 1.45;
+  padding: 0.25rem;
+}
+
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4,
+.markdown-content h5,
+.markdown-content h6 {
+  font-family: Arimo, Helvetica, sans-serif;
+}
+
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3 {
+  border-bottom: 2px solid #fafafa;
+  margin-bottom: 1.15rem;
+  padding-bottom: 0.5rem;
+  text-align: center;
+}
+
+.markdown-content blockquote {
+  border-left: 8px solid #fafafa;
+  padding: 1rem;
+}
+
+.markdown-content pre,
+.markdown-content code {
+  @apply bg-neutral-800 rounded;
+}

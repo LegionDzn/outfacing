@@ -1,11 +1,6 @@
 <script>
-    // Root layout script
-  </script>
-  
-  <style global>
-    @import '../app.css';
-    @import '../modest.css';
-  </style>
-  
-  <slot />
-  
+	import '../app.css';
+	let { children } = $props();
+</script>
+
+{@render children()}
